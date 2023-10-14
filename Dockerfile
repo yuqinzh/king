@@ -14,9 +14,8 @@ RUN apt-get update && \
   apt-get install -y iproute2  coreutils  procps curl && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-  ddgroup --gid 10001 choreo &&\
-  adduser --disabled-password  --no-create-home --uid 10001 --ingroup choreo choreouser &&\
-  usermod -aG sudo choreouser &&\
+  addgroup --gid 10001 choreo &&\
+  adduser --disabled-password  --no-create-home --uid 10001 --ingroup choreo choreouser
   chmod 755 package.json index.js run.sh /app &&\
   npm install
 
