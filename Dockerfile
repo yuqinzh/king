@@ -15,7 +15,7 @@ RUN apt-get update && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
   addgroup --gid 10001 choreo &&\
-  adduser --disabled-password  --no-create-home --uid 10001 --ingroup choreo choreouser
+  adduser --disabled-password  --no-create-home --uid 10001 --ingroup choreo choreouser &&\
   chmod 755 package.json index.js run.sh /app &&\
   npm install
 
